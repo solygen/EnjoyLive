@@ -43,8 +43,10 @@ var util = {
     getVenues: function () {
         return {
             cologne: ['8778655',    //Underground
+                      '8787338',    //E-Werk
                       '8778353',    //Live Music Hall
                       '8852183',    //Sonic Ballroom
+                      '8780273',    //MTC
                       '8850228'],   //Essigfabrik
             siegen: ['8781504',     //Vortex
                      '8781389',     //BlueBox
@@ -61,16 +63,17 @@ var util = {
                    '9068483',       //Pub
                    '8999095',       //Biggepavilion
                    '8915220',       //Stadthalle
-                   '8915442'],      //Marktplatz
-            olpekreis: ['8916590',  //OT Grevenbrück
-                        '8782130',  //Stadtschänke
-                        '9005541',  //Old Mill
-                        '8929879',  //KOT
-                        '8819113',  //Noisebox
-                        '8865281',  //Stadthalle Attendorn
-                        '8918826',  //Blaues Haus
-                        '8785391'], //Alte Druckerei
-            bochum: ['8779889']     //Matrix
+                   '8915442',       //Marktplatz
+                   '8916590',       //OT Grevenbrück
+                   '8782130',       //Stadtschänke
+                   '9005541',       //Old Mill
+                   '8929879',       //KOT Wenden
+                   '8819113',       //Noisebox
+                   '8865281',       //Stadthalle Attendorn
+                   '8918826',       //Blaues Haus
+                   '8785391'],      //Alte Druckerei
+            bochum: ['8779889',     //Matrix
+                     '8795925']     //Bahnhof Langendreer
         }
     }
 };
