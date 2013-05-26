@@ -1,4 +1,9 @@
-EnjoyLive
-=========
 
-add your last.fm key/secret to config.js
+#DEMO
+[http://enjoylive.solygen.de](http://enjoylive.solygen.de)
+
+#Screenshot
+![image](doc/screenshoot.jpeg)
+
+
+
