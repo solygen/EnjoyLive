@@ -9,7 +9,7 @@ var lastfm = new LastFM({
     cache         : cache
 });
 
-var events, node;
+var events, node, contentnode = $(document.body).find('.row');
 
 var util = {
     getEventObject: function (event) {
@@ -40,7 +40,7 @@ var util = {
         return $('<div class="span4"><h2>Heading</h2><p></p></div>')
     },
 
-    getVenues: function () {
+    getDefaultVenues: function () {
         return {
             cologne: ['8778655',    //Underground
                       '8787338',    //E-Werk
@@ -86,18 +86,47 @@ var wrapper = {
 };
 
 //main
-_.each(_.flatten(util.getVenues()), function (id) {
-    wrapper.getEvents(id)
-        .done(function(data) {
-            //any events for this venue?
-            if (data.events['@attr']) {
-                //ensure array
-                var event = [].concat(data.events.event)
-                //output node
-                node = util.getNode();
-                node.find('h2').text(data.events['@attr'].venue);
-                events = _.map(event, util.getEventObject); //also add artist to node
-                $(document.body).find('.row').prepend(node);
-            }
-        });
-});
+var render = function (venues) {
+  //render
+  contentnode.empty();
+  _.each(venues, function (id) {
+      wrapper.getEvents(id)
+          .done(function(data) {
+              //any events for this venue?
+              if (data.events['@attr']) {
+                  //ensure array
+                  var event = [].concat(data.events.event)
+                  //output node
+                  node = util.getNode();
+                  node.find('h2')
+                    .html('<i class="icon-bullseye">' + '&nbsp;' + data.events['@attr'].venue + '</i>');
+                  events = _.map(event, util.getEventObject); //also add artist to node
+                  //dom append and draw
+                  contentnode.append(node);
+              }
+          });
+  })
+}
+
+
+var navigate = function () {
+    if (location.hash.substr(0, 1) === '#' && location.hash.length > 1) {
+        //hash to numeric
+        var isNumber = location.hash.substr(1).replace(/[0-9,]/g, '') === '';
+        //render
+        if (isNumber) {
+            render(location.hash.substr(1).split(','));
+        }
+        else if (util.getDefaultVenues()[location.hash.substr(1)]) {
+            location.hash = '#' + util.getDefaultVenues()[location.hash.substr(1)];
+        }
+        else {
+          render();
+        }
+    } else {
+        //use default locations instead
+        location.hash = '#' + (_.flatten(util.getDefaultVenues()).join(','))
+    }
+};
+window.onhashchange = navigate;
+navigate();
