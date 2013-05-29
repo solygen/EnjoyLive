@@ -10,15 +10,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="js/vendor/bootstrap/docs/assets/css/bootstrap.css">
         <style>
             body {
                 padding-top: 60px;
                 padding-bottom: 40px;
             }
         </style>
-        <link rel="stylesheet" href="js/vendor/bootstrap/docs/assets/css/bootstrap-responsive.css">
-        <link rel="stylesheet" href="js/vendor/font-awesome/build/assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="lib/vendors/bootstrap.css">
+        <link rel="stylesheet" href="lib/vendors/bootstrap-responsive.css">
+        <link rel="stylesheet" href="lib/vendors/font-awesome.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <!-- favicon -->
@@ -43,29 +43,20 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
                     <a class="brand" href="#"><i class="icon-headphones"></i> EnjoyLive</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Events <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">All Cities</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#cologne">Cologne</a></li>
-                                    <li><a href="#bochum">Bochum</a></li>
-                                    <li><a href="#olpe">Olpe</a></li>
-                                    <li><a href="#siegen">Siegen</a></li>
-                                </ul>
-                            </li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle active" data-toggle="dropdown">Events <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">All Cities</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#cologne">Cologne</a></li>
+                                <li><a href="#bochum">Bochum</a></li>
+                                <li><a href="#olpe">Olpe</a></li>
+                                <li><a href="#siegen">Siegen</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -92,12 +83,10 @@
         </div> <!-- /container -->
 
         <script type="text/javascript" src="https://rawgithub.com/solygen/js-last.fm-api/master/lastfm.min.js"></script>
-        <script src="js/vendor/jquery/jquery.min.js"></script>
-        <script src="js/vendor/underscore/underscore-min.js"></script>
-        <script src="js/vendor/bootstrap/docs/assets/js/bootstrap.min.js"></script>
-        <script src="js/config.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="lib/vendors/jquery.min.js"></script>
+        <script src="lib/vendors/underscore-min.js"></script>
+        <script src="lib/vendors/bootstrap.min.js"></script>
+        <script src="lib/EnjoyLive.min.js"></script>
 
     </body>
 </html>

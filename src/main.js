@@ -12,7 +12,7 @@ var lastfm = new LastFM({
 var events, node, contentnode = $(document.body).find('.row');
 
 var util = {
-    toIso: function (date) {    
+    toIso: function (date) {
         var dd = date.getDate(),
             mm = date.getMonth() + 1,
             yyyy = date.getFullYear();
