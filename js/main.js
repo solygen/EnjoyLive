@@ -12,14 +12,26 @@ var lastfm = new LastFM({
 var events, node, contentnode = $(document.body).find('.row');
 
 var util = {
+    toIso: function (date) {    
+        var dd = date.getDate(),
+            mm = date.getMonth() + 1,
+            yyyy = date.getFullYear();
+        //leading zero
+        dd = dd < 10 ? '0' + dd : dd;
+        mm = mm < 10 ? '0' + mm : mm;
+        return yyyy + '-' + mm + '-' + dd;
+    },
+
     getEventObject: function (event) {
         if (event.artists.artist) {
             $(node.find('p')[0]).append(
-                '<a href = "' + event.url + '">'
+                util.toIso(new Date(event.startDate))
+                + ': '
+                + '<a href = "' + event.url + '">'
                 + [].concat(event.artists.artist).join(', ')
                 + '</a>'
                 + '<br>');
-            debugger;
+
             return {
                 eventid: event.id,
                 artists: event.artists,
